@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container{
+            display: flex;
+            width: 100wh;
+            height:95vh;
+
+            background-image: linear-gradient(
+                0deg,
+                #dfdfdf 0%,
+                #efefef 50%, #dfdfdf 100%
+            );
+            background-size: 100% 2vh;
+        }
+        .left{
+            width: 30%;
+            display: grid;
+            place-items: center;
+
+            vertical-align:middle;
+        }
+        .right{
+            width: 70%;
+            background: radial-gradient(
+                circle farthest-side at 60vw 100vh,
+                #93ffa2c0 0%,
+                #ffffffc0 50%
+            );
+            border-radius: 5vh;
+        }
+        .detail{
+            height: 100%;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size:1.5vw;
+        }
+        .button-left{
+            height: 95%;
+            width: 95%;
+
+            cursor:pointer;
+
+            
+            border-style: solid;
+            border-color:transparent;
+            border-width: 0.8vh;
+            border-radius: 999999px;
+            background-color:#ffffffc0;
+
+            font-size:2vw;
+            font-weight: bold;
+        }
+        .button-left:hover{
+            border-color:#09a709;
+            background: linear-gradient(#ffffffc0, #3aeb52c0);
+        }
+    </style>
+    <script>
+        function changeDetail(){
+            let button_id = event.target.id;
+            let detail = document.getElementById("detail_text");
+            
+            let text = "";
+            
+            switch(button_id){
+                case "greeting":
+                    text = "⚠更新中⚠";
+                    break;
+                case "career":
+                    text = '東京電機大学システムデザイン工学部情報システム工学科　卒業\n東京電機大学大学院システムデザイン工学研究科情報システム工学専攻　修了\n富士通Japan株式会社　入社';
+                    break;
+                case "hobby":
+                    text = "⚠更新中⚠";
+                    break;
+                case "qualification":
+                    text = "基本情報技術者試験";
+                    break;
+            }
+            
+            detail.innerHTML = "<span>" + text + "</span>";
+        }
+    </script>
+</head>
+<body class="container">
+    <div class="left"> 
+        <input type="button" value="あいさつ" id="greeting" class="button-left" onClick="changeDetail()"/>
+        <input type="button" value="経歴" id="career" class="button-left" onClick="changeDetail()"/>
+        <input type="button" value="趣味" id="hobby" class="button-left" onClick="changeDetail()"/>
+        <input type="button" value="資格・特技" id="qualification" class="button-left" onClick="changeDetail()"/>
+    </div>
+    <div class="right">
+        <div id="detail_text" class="detail" align="center"></div>
+    </div>
+ 
+</body>
+</html>
