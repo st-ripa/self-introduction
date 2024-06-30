@@ -31,6 +31,7 @@
             );
             border-radius: 5vh;
         }
+        
         .detail{
             height: 100%;
             word-wrap: break-word;
@@ -48,12 +49,11 @@
 
             cursor:pointer;
 
-　　　　　　　position: relative;
-
+            position: relative;
             
             border-style: solid;
             border-color:transparent;
-            border-width: 0.8vh;
+            border-width: 10%;
             border-radius: 999999px;
             background-color:#ffffffc0;
 
@@ -114,6 +114,11 @@
         <button id="career" class="button-left" onClick="changeDetail()">経歴</button>
         <button id="hobby" class="button-left" onClick="changeDetail()">趣味</button>
         <button id="qualification" class="button-left" onClick="changeDetail()">資格・特技</button>
+        <!--
+        <input type="button" value="経歴" id="career" class="button-left" onClick="changeDetail()"/>
+        <input type="button" value="趣味" id="hobby" class="button-left" onClick="changeDetail()"/>
+        <input type="button" value="資格・特技" id="qualification" class="button-left" onClick="changeDetail()"/>
+        -->
     </div>
     <div class="right">
         <div id="detail_text" class="detail" align="center"></div>
